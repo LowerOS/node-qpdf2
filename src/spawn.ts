@@ -3,8 +3,8 @@ import { spawn } from "child_process";
 export default (callArguments: string[]): Promise<Buffer> => {
   return new Promise((resolve, reject) => {
     const process = spawn("qpdf", callArguments);
-    const stdout: string[] = [];
-    const stderr: string[] = [];
+    const stdout: Uint8Array[] = [];
+    const stderr: Uint8Array[] = [];
     process.stdout.on("data", (data) => {
       stdout.push(data);
     });
@@ -16,9 +16,9 @@ export default (callArguments: string[]): Promise<Buffer> => {
     });
     process.on("close", (code) => {
       if (code !== 0) {
-        reject(Buffer.from(stderr.join("")));
+        reject(Buffer.concat(stderr));
       } else {
-        resolve(Buffer.from(stdout.join("")));
+        resolve(Buffer.concat(stdout));
       }
     });
   });
