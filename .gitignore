@@ -3,3 +3,4 @@ dist/**
 .eslintcache
 test/output/*.pdf
 coverage
+.DS_Store
