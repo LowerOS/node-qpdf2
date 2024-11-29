@@ -1,21 +1,14 @@
 {
-  "name": "@neatcapital/node-qpdf2",
-  "version": "2.1.0-neat-fork",
+  "name": "@loweros/node-qpdf2",
+  "version": "2.1.0",
   "description": "A Content Preserving transformations on PDFs wrapped around QPDF",
   "main": "./dist/index.js",
-  "scripts": {
-    "pretest": "npm run build",
-    "test": "c8 ava --timeout=30s",
-    "lint": "eslint '**/*.[jt]s' --cache",
-    "build": "tsc -p tsconfig.json",
-    "deploy": "npm run build && npm publish --userconfig=.npmrc"
-  },
   "engines": {
     "node": ">=10.17.0"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Sparticuz/node-qpdf2.git"
+    "url": "git+https://github.com/LowerOS/node-qpdf2.git"
   },
   "keywords": [
     "pdf",
@@ -36,10 +29,16 @@
   "author": "Kyle McNally <kyle@kmcnally.net>",
   "license": "MIT",
   "types": "./dist/index.d.ts",
-  "bugs": {
-    "url": "https://github.com/Sparticuz/node-qpdf2/issues"
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "pretest": "npm run build",
+    "test": "c8 ava --timeout=30s",
+    "lint": "eslint '**/*.[jt]s' --cache",
+    "build": "tsc -p tsconfig.json",
+    "deploy": "npm run build && npm publish --userconfig=.npmrc"
   },
-  "homepage": "https://github.com/Sparticuz/node-qpdf2",
   "devDependencies": {
     "@sparticuz/eslint-config": "^3.6.0",
     "@types/node": "^16.9.1",
